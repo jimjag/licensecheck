@@ -91,6 +91,16 @@ func init() {
 	}
 	builtinList = append(files, builtinURLs...)
 	builtin = New(BuiltinLicenses())
+
+	filesLRE := []License{
+		{Name: "MIT", Text: license_MIT_lre},
+	}
+	builtinListLRE = filesLRE      // TODO URLs
+	s, err := NewScanner(filesLRE) // TODO BuiltinScannerLicenses
+	if err != nil {
+		panic(err)
+	}
+	builtinScanner = s
 }
 
 const license_AGPL_3_0 = `                    GNU AFFERO GENERAL PUBLIC LICENSE
@@ -12930,4 +12940,101 @@ Redistribution and use in source and binary forms, with or without modification,
 4. The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ` + "`" + `` + "`" + `AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+`
+const license_MIT_lre = `//**
+MIT License
+https://spdx.org/licenses/MIT.json
+https://opensource.org/licenses/MIT
+https://fedoraproject.org/wiki/Licensing:MIT
+**//
+
+(( MIT License))??
+
+//**Copyright**//
+
+Permission is hereby granted,
+((free of charge))??
+to any person obtaining a copy of
+__7__ //** (allow parenthetical descriptions) **//
+((and associated documentation files))??
+the
+((Software || Materials))
+to deal in the
+((Software || Materials))
+((under the copyrights))??
+((without restriction))??
+including
+((without limitation))??
+the rights
+((to))??
+use, copy, modify, merge, publish, distribute,
+((sublicense))??
+and/or
+((sell))??
+((modified))??
+copies of the
+((Software || Materials))
+and to permit persons to whom the
+((Software is || Materials are))
+furnished to do so,
+subject to
+((the following || all))
+conditions:
+
+__1__
+((
+	The above
+	((copyright || authorship))
+	notice
+	(( and this permission notice
+		((including the next paragraph))??
+	|| as well as this permission notice
+	|| this permission notice, and the below disclaimer
+	|| and every other copyright notice found in this software,
+		and all the attributions in every file, and this permission notice
+	|| and this permission notice (or reference to this permission notice) ))
+||
+	This permission notice
+))
+((must || shall))
+be included in all
+copies
+or
+((substantial || any))??
+portions of the
+((Software || Materials))
+
+((DISCLAIMER))??
+
+__1__
+
+
+THE
+((SOFTWARE || MATERIALS))
+IS PROVIDED "AS IS",
+WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO
+THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE
+AND NONINFRINGEMENT.
+IN NO EVENT
+((SHALL || WILL))
+__5__ BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT,
+((TORT || FART))
+OR OTHERWISE,
+ARISING FROM, OUT OF OR
+((IN || I))
+CONNECTION WITH
+((TE || THE))
+((SOFTWARE || MATERIALS))
+OR THE USE OR OTHER DEALINGS IN
+((THE
+	((SOFTWARE || MATERIALS))
+))??
+
+
+
 `
